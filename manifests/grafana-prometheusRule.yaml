@@ -17,7 +17,7 @@ spec:
     - alert: GrafanaRequestsFailing
       annotations:
         message: '{{ $labels.namespace }}/{{ $labels.job }}/{{ $labels.handler }} is experiencing {{ $value | humanize }}% errors'
-        runbook_url: https://runbooks.prometheus-operator.dev/runbooks/grafana/grafanarequestsfailing
+        runbook_url: https://runbooks.prometheus-operator.dev/runbooks/registry.cn-hangzhou.aliyuncs.com/asbel-basic-images/grafana:11.5.2requestsfailing
       expr: |
         100 * namespace_job_handler_statuscode:grafana_http_request_duration_seconds_count:rate5m{handler!~"/api/datasources/proxy/:id.*|/api/ds/query|/api/tsdb/query", status_code=~"5.."}
         / ignoring (status_code)

@@ -18,7 +18,7 @@ spec:
       port: web
   enableFeatures: []
   externalLabels: {}
-  image: quay.io/prometheus/prometheus:v3.2.0
+  image: registry.cn-hangzhou.aliyuncs.com/asbel-basic-images/prometheus:v3.2.0
   nodeSelector:
     kubernetes.io/os: linux
   podMetadata:
